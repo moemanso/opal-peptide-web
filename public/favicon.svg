@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <defs>
+    <linearGradient id="opalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1B8A9A"/>
+      <stop offset="50%" stop-color="#5B8DEF"/>
+      <stop offset="100%" stop-color="#9B6DDB"/>
+    </linearGradient>
+  </defs>
+  <rect width="32" height="32" rx="8" fill="url(#opalGrad)"/>
+  <circle cx="16" cy="16" r="12" stroke="white" stroke-width="1.2" stroke-opacity="0.5"/>
+  <circle cx="16" cy="16" r="5" fill="white" fill-opacity="0.85"/>
+</svg>

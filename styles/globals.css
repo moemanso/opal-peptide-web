@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Google Fonts ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ─── shadcn/ui CSS variable bridge (Tailwind v3) ───────────── */
+:root {
+  --background: 248 250 252;
+  --foreground: 10 22 40;
+  --card: 255 255 255;
+  --card-foreground: 10 22 40;
+  --primary: 10 22 40;
+  --primary-foreground: 248 250 252;
+  --secondary: 241 245 249;
+  --secondary-foreground: 10 22 40;
+  --muted: 241 245 249;
+  --muted-foreground: 100 116 139;
+  --accent: 241 245 249;
+  --accent-foreground: 10 22 40;
+  --destructive: 239 68 68;
+  --border: 226 232 240;
+  --input: 226 232 240;
+  --ring: 27 138 154;
+  --radius: 0.625rem;
+}
+
+.dark, [data-theme="dark"] {
+  --background: 2 6 23;
+  --foreground: 248 250 252;
+  --card: 15 23 42;
+  --card-foreground: 248 250 252;
+  --primary: 248 250 252;
+  --primary-foreground: 2 6 23;
+  --secondary: 30 41 59;
+  --secondary-foreground: 248 250 252;
+  --muted: 30 41 59;
+  --muted-foreground: 148 163 184;
+  --accent: 30 41 59;
+  --accent-foreground: 248 250 252;
+  --destructive: 239 68 68;
+  --border: 255 255 255;
+  --input: 255 255 255;
+  --ring: 27 138 154;
+}
+
+/* ─── CSS Custom Properties (design tokens) ────────────────── */
+:root {
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
+  --font-inter: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ─── Base resets ───────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Respect reduced-motion user preference */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    @apply font-body text-navy-900 bg-pearl-100;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Accessible focus ring — visible only on keyboard nav */
+  :focus-visible {
+    outline: 2px solid theme('colors.opal.500');
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Skip-to-content link */
+  .skip-link {
+    @apply absolute -top-full left-4 z-[9999] px-4 py-2 bg-white text-navy-950 font-semibold text-sm rounded-b-lg shadow-card;
+  }
+  .skip-link:focus {
+    @apply top-0;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  /* Prevent horizontal overflow */
+  body, main {
+    overflow-x: hidden;
+  }
+}
+
+/* ─── Component utilities ───────────────────────────────────── */
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2
+      min-h-[48px] px-6 py-3
+      bg-navy-950 text-white
+      font-body text-sm font-semibold
+      rounded-xl
+      hover:bg-navy-800 active:bg-navy-900
+      transition-colors duration-150
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-opal-500 focus-visible:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2
+      min-h-[48px] px-6 py-3
+      bg-pearl-200 text-navy-700
+      font-body text-sm font-semibold
+      rounded-xl border border-pearl-300
+      hover:bg-pearl-300 active:bg-pearl-300
+      transition-colors duration-150
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-opal-500 focus-visible:ring-offset-2;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2
+      min-h-[48px] px-6 py-3
+      bg-transparent text-navy-700
+      font-body text-sm font-semibold
+      rounded-xl
+      hover:bg-pearl-200 active:bg-pearl-300
+      transition-colors duration-150
+      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-opal-500;
+  }
+
+  .section-label {
+    @apply font-body text-xs font-semibold text-opal-600 uppercase tracking-widest;
+  }
+
+  .opal-badge {
+    @apply inline-flex items-center gap-1 px-2.5 py-1
+      bg-opal-50 border border-opal-200
+      rounded-full font-body text-xs text-opal-700 font-semibold;
+  }
+
+  /* Card pattern */
+  .card {
+    @apply bg-white rounded-2xl border border-pearl-300 shadow-card;
+  }
+}
+
+/* ─── Prose overrides for rich content ─────────────────────── */
+@layer utilities {
+  .prose-opal {
+    @apply text-navy-700 leading-relaxed;
+  }
+
+  .prose-opal h2 {
+    @apply font-display text-2xl font-semibold text-navy-950 mt-8 mb-3;
+  }
+
+  .prose-opal p {
+    @apply mb-4;
+  }
+
+  .prose-opal strong {
+    @apply font-semibold text-navy-900;
+  }
+}
