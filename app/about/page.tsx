@@ -184,11 +184,11 @@ export default function AboutPage() {
             Questions about our compounds, processes, or ordering?
           </p>
           <a
-            href="mailto:amanda@opalpeptide.com"
+            href="mailto:inquiry@opalpeptide.com"
             className="inline-flex items-center gap-2 font-body text-lg font-semibold text-opal-400 hover:text-opal-300 transition-colors duration-150
               focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-opal-500 rounded"
           >
-            amanda@opalpeptide.com
+            inquiry@opalpeptide.com
             <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>

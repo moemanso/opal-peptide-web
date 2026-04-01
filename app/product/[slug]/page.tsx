@@ -188,7 +188,7 @@ export default function ProductPage({ params }: Props) {
             {/* CTA buttons */}
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <a
-                href={`mailto:amanda@opalpeptide.com?subject=Order Inquiry: ${encodeURIComponent(product.name)}&body=I'd like to order ${product.name} (SKU: ${product.sku}). Please provide ordering instructions.`}
+                href={`mailto:inquiry@opalpeptide.com?subject=Order Inquiry: ${encodeURIComponent(product.name)}&body=I'd like to order ${product.name} (SKU: ${product.sku}). Please provide ordering instructions.`}
                 className="btn-primary flex-1 text-center justify-center"
                 aria-disabled={!product.inStock}
               >

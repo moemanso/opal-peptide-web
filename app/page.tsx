@@ -14,7 +14,7 @@ const jsonLd = {
   url: "https://opalpeptide.com",
   contactPoint: {
     "@type": "ContactPoint",
-    email: "amanda@opalpeptide.com",
+    email: "inquiry@opalpeptide.com",
     contactType: "customer service",
   },
 };

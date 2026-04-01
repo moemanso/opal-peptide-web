@@ -59,7 +59,7 @@ export default function Footer() {
               Premium research-grade peptides for qualified researchers and laboratory professionals.
             </p>
             <a
-              href="mailto:amanda@opalpeptide.com"
+              href="mailto:inquiry@opalpeptide.com"
               className="inline-flex items-center gap-2 font-body text-sm text-opal-400 hover:text-opal-300 transition-colors duration-150
                 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-opal-500 rounded"
             >
@@ -67,7 +67,7 @@ export default function Footer() {
                 <rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" strokeWidth="1.2"/>
                 <path d="M1 4.5L7 8l6-3.5" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round"/>
               </svg>
-              amanda@opalpeptide.com
+              inquiry@opalpeptide.com
             </a>
           </div>
 

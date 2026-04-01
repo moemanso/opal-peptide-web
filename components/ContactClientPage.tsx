@@ -105,8 +105,8 @@ export default function ContactClientPage() {
                       </svg>
                     ),
                     label: "Email",
-                    value: "amanda@opalpeptide.com",
-                    href: "mailto:amanda@opalpeptide.com",
+                    value: "inquiry@opalpeptide.com",
+                    href: "mailto:inquiry@opalpeptide.com",
                   },
                 ].map(({ icon, label, value, href }) => (
                   <div key={label} className="flex items-center gap-3">
